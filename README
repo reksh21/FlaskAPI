@@ -1,0 +1,38 @@
+Resume Parser - SpaCy NER with Flask API
+
+This repository implements a Flask API for resume parsing using spaCy's Named Entity Recognition (NER) capabilities. It allows users to upload a PDF resume and extract key information like contact details, skills, education, and work experience.
+
+Features:
+
+1) Parses PDF resumes using PyPDF2.
+2) Extracts entities using a spaCy NER model (saved model included).
+3) Returns identified entities in JSON format.
+
+Requirements:
+
+1) Python 3.12.6
+2) Flask 3.0.3
+3) PyPDF2 3.0.1
+4) spacy 3.7.6
+
+Setup:
+
+1) Clone this repository:
+git clone https://<your_github_username>/<your_repo_name>.git
+
+2) Install the required dependencies:
+pip install -r requirements.txt
+
+3) Run the application
+python app.py
+This will start the Flask application, typically running on http://127.0.0.1:5000 by default.
+
+4) Send POST request with resume PDF:
+    - Use Postman client to send a POST request to the /upload-pdf endpoint.
+    - Set the request method to POST.
+    - Set the URL to http://127.0.0.1:5000/upload-pdf.
+    - Select the "Body" tab and choose "form-data" as the mode.
+    - Add a key named "pdf" and select the PDF file containing the resume you want to parse.
+
+5) Receive response:
+Upon successful parsing, the application will return a JSON response containing the extracted entities, including their text and corresponding labels
